@@ -3,7 +3,7 @@ const express = require("express");
 const hbs = require("hbs");
 const request = require("request");
 const weather = require("./utils/weather.js");
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 //paths
 const viewsPath = path.join(__dirname, "../templates/views");
