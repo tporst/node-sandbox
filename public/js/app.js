@@ -9,16 +9,14 @@ weatherForm.addEventListener("submit", (e) => {
   console.log("submited" + search.value);
   output.textContent = "loading";
   //let temperature =
-  fetch("http://localhost:3000/weather?address=" + search.value).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.temperatur) {
-          output.textContent = "temperature is " + data.temperatur;
-          console.log(data);
-        } else {
-          output.textContent = data.error;
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + search.value).then((response) => {
+    response.json().then((data) => {
+      if (data.temperatur) {
+        output.textContent = "temperature is " + data.temperatur;
+        console.log(data);
+      } else {
+        output.textContent = data.error;
+      }
+    });
+  });
 });
